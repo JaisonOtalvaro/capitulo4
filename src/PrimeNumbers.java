@@ -6,14 +6,7 @@ public class PrimeNumbers {
         int i,j;
         if (max >= 2) {
             esPrimo = getBooleans(max);
-// Criba
-            for (i=2; i<Math.sqrt(esPrimo.length)+1; i++) {
-                if (esPrimo[i]) {
-// Eliminar los múltiplos de i
-                    for (j=2*i; j< esPrimo.length; j+=i)
-                        esPrimo[j] = false;
-                }
-            }
+            extracted();
 // ¿Cuántos primos hay?
             int cuenta = 0;
             for (i=0; i< esPrimo.length; i++) {
@@ -29,6 +22,17 @@ public class PrimeNumbers {
             return primos;
         } else {
             return new int[0];
+        }
+    }
+
+    private static void extracted() {
+        int i;
+        int j;
+        for (i=2; i<Math.sqrt(esPrimo.length)+1; i++) {
+            if (esPrimo[i]) {
+                for (j=2*i; j< esPrimo.length; j+=i)
+                    esPrimo[j] = false;
+            }
         }
     }
 
