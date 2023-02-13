@@ -1,16 +1,11 @@
 import java.util.Scanner;
 public class PrimeNumbers {
+    private static boolean [] esPrimo;
 
-    public static int[] generarPrimos (int max)
-    {
+    public static int[] generarPrimos (int max) {
         int i,j;
         if (max >= 2) {
-            boolean[] esPrimo = new boolean[max + 1];
-// Inicializar el array
-            for (i=0; i< esPrimo.length; i++)
-                esPrimo[i] = true;
-// Eliminar el 0 y el 1, que no son primos
-            esPrimo[0] = esPrimo[1] = false;
+            esPrimo = getBooleans(max);
 // Criba
             for (i=2; i<Math.sqrt(esPrimo.length)+1; i++) {
                 if (esPrimo[i]) {
@@ -36,6 +31,17 @@ public class PrimeNumbers {
             return new int[0];
         }
     }
+
+    private static boolean[] getBooleans(int max) {
+        int i;
+        esPrimo = new boolean[max + 1];
+        for (i=0; i< esPrimo.length; i++)
+            esPrimo[i] = true;
+        esPrimo[0] = false;
+        esPrimo[1] = false;
+        return esPrimo;
+    }
+
     public static void main(String[] args) {
         Scanner teclado=new Scanner(System.in);
         System.out.println("Introduce el número para la criba de Erastótenes:");
