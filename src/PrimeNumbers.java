@@ -1,28 +1,34 @@
 import java.util.Scanner;
 public class PrimeNumbers {
     private static boolean [] esPrimo;
+    private static int [] primos;
 
     public static int[] generarPrimos (int max) {
         int i,j;
         if (max >= 2) {
             esPrimo = getBooleans(max);
             extracted();
-// ¿Cuántos primos hay?
-            int cuenta = 0;
-            for (i=0; i< esPrimo.length; i++) {
-                if (esPrimo[i])
-                    cuenta++;
-            }
-// Rellenar el vector de números primos
-            int[] primos = new int[cuenta];
-            for (i=0, j=0; i< esPrimo.length; i++) {
-                if (esPrimo[i])
-                    primos[j++] = i;
-            }
+            primos = getInts();
             return primos;
         } else {
             return new int[0];
         }
+    }
+
+    private static int[] getInts() {
+        int i;
+        int j;
+        int cuenta = 0;
+        for (i=0; i< esPrimo.length; i++) {
+            if (esPrimo[i])
+                cuenta++;
+        }
+        primos = new int[cuenta];
+        for (i=0, j=0; i< esPrimo.length; i++) {
+            if (esPrimo[i])
+                primos[j++] = i;
+        }
+        return primos;
     }
 
     private static void extracted() {
