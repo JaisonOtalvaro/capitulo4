@@ -1,10 +1,10 @@
 import java.util.Scanner;
+
 public class PrimeNumbers {
     private static boolean [] esPrimo;
     private static int [] primos;
 
     public static int[] generarPrimos (int max) {
-        int i,j;
         if (max >= 2) {
             esPrimo = recorrerTabla(max);
             descartarNumerosMultiplos();
@@ -54,7 +54,7 @@ public class PrimeNumbers {
         Scanner teclado=new Scanner(System.in);
         System.out.println("Introduce el número para la criba de Erastótenes:");
         int dato=teclado.nextInt();
-        int vector[]=new int[dato];
+        int[] vector =new int[dato];
         System.out.println("\nVector inicial hasta :"+dato);
         for (int i = 0; i < vector.length; i++) {
             if (i%10==0) System.out.println();
