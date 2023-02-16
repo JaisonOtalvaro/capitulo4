@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"<Unnamed>","c":"PrimeNumbers","l":"generarPrimos(int)"},{"p":"<Unnamed>","c":"PrimeNumbers","l":"main(String[])","u":"main(java.lang.String[])"},{"p":"<Unnamed>","c":"PrimeNumbers","l":"PrimeNumbers()","u":"%3Cinit%3E()"}];updateSearchResults();

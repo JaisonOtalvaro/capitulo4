@@ -1,9 +1,23 @@
 import java.util.Scanner;
 
+/**
+ * Clase PrimeNumbers muestra los numeros primos
+ * @author Admin
+ * @version 1.0.1
+ * @see <a href="https://es.wikipedia.org/wiki/N%C3%BAmero_primo">Numeros primos</a>
+ */
 public class PrimeNumbers {
     private static boolean [] esPrimo;
     private static int [] primos;
 
+    /**
+     * Este es el metodo que genera los numeros primos hasta valor maximo que introduce usuario
+     * @param max numero maximo hasta donde se genera los numeros primos
+     * @return <ul>
+     *     <li>Si cumple condicion trae vector de primos</li>
+     *     <li>Si no cumple condicion trae vector vacio</li>
+     * </ul>
+     */
     public static int[] generarPrimos (int max) {
         if (max >= 2) {
             esPrimo = recorrerTabla(max);
@@ -14,6 +28,13 @@ public class PrimeNumbers {
             return new int[0];
         }
     }
+
+    /**
+     * Este metodo recorre vector
+     * @param max numero maximo hasta donde se genera los numeros primos
+     * @return vector booleano esPrimo sin el cero ni el uno
+     *
+     */
     private static boolean[] recorrerTabla(int max) {
         int i;
         esPrimo = new boolean[max + 1];
@@ -23,6 +44,10 @@ public class PrimeNumbers {
         esPrimo[1] = false;
         return esPrimo;
     }
+
+    /**
+     * Este metodo descarta los numeros con multiplos ya que no seran primos
+     */
     private static void descartarNumerosMultiplos() {
         int i;
         int j;
@@ -33,6 +58,11 @@ public class PrimeNumbers {
             }
         }
     }
+
+    /**
+     * Este metodo cuenta y rellena el vector con los numeros primos
+     * @return vector primos con los numeros primos
+     */
     private static int[] contarRellenar() {
         int i;
         int j;
