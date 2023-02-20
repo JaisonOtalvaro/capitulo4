@@ -35,7 +35,7 @@ public class PrimeNumbers {
      * @return vector booleano esPrimo sin el cero ni el uno
      *
      */
-    private static boolean[] recorrerTabla(int max) {
+    public static boolean[] recorrerTabla(int max) {
         int i;
         esPrimo = new boolean[max + 1];
         for (i=0; i< esPrimo.length; i++)
@@ -48,7 +48,7 @@ public class PrimeNumbers {
     /**
      * Este metodo descarta los numeros con multiplos ya que no seran primos
      */
-    private static void descartarNumerosMultiplos() {
+    public static void descartarNumerosMultiplos() {
         int i;
         int j;
         for (i=2; i<Math.sqrt(esPrimo.length)+1; i++) {
@@ -63,7 +63,7 @@ public class PrimeNumbers {
      * Este metodo cuenta y rellena el vector con los numeros primos
      * @return vector primos con los numeros primos
      */
-    private static int[] contarRellenar() {
+    public static int[] contarRellenar() {
         int i;
         int j;
         int cuenta = 0;
